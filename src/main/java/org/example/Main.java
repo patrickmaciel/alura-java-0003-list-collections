@@ -48,6 +48,23 @@ public class Main {
 
     System.out.println("Titles quantity: " + titles.size());
     System.out.println("Titles ArrayList: " + titles);
+
+    breakLine();
+
+    ArrayList<Person> persons = new ArrayList<>();
+    Person person1 = new Person("Patrick Maciel", 34);
+    Person person2 = new Person("Aline Martins", 35);
+    persons.add(person1);
+    persons.add(person2);
+
+    System.out.println("Persons quantity: " + persons.size());
+    System.out.println("Persons ArrayList: " + persons);
+  }
+
+  public static void breakLine() {
+    System.out.println("");
+    System.out.println("---------------------------");
+    System.out.println("");
   }
 
 
