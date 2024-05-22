@@ -80,6 +80,12 @@ public class Main {
     System.out.println("Percorrendo um ArrayList com foreach");
 
     titles.forEach(title -> System.out.println(title.getName()));
+
+    breakLine();
+
+    System.out.println("Percorrendo um ArrayList com foreach + method reference");
+
+    titles.forEach(System.out::println);
   }
 
   public static void breakLine() {
