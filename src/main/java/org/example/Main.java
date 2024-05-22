@@ -1,6 +1,8 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -73,19 +75,35 @@ public class Main {
 
     for (Title title : titles) {
       System.out.println(title.getName());
+      if (title instanceof Movie movieItem) {
+        System.out.println("Classification: " + movieItem.classify());
+      }
     }
 
     breakLine();
 
     System.out.println("Percorrendo um ArrayList com foreach");
-
     titles.forEach(title -> System.out.println(title.getName()));
-
     breakLine();
 
     System.out.println("Percorrendo um ArrayList com foreach + method reference");
-
     titles.forEach(System.out::println);
+    breakLine();
+
+    System.out.println("Sorting an ArrayList<Primitive>");
+    ArrayList<String> titlesPrimitive = new ArrayList<>();
+    titlesPrimitive.add("The Godfather");
+    titlesPrimitive.add("The Lord of the Rings");
+    titlesPrimitive.add("My Hero Academia");
+    titlesPrimitive.add("As Branquelas");
+    Collections.sort(titlesPrimitive);
+    titles.forEach(System.out::println);
+    breakLine();
+
+    System.out.println("Sorting an ArrayList<Non-Primitive>");
+    Collections.sort(titles);
+    titles.forEach(System.out::println);
+    breakLine();
   }
 
   public static void breakLine() {

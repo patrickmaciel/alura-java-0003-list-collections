@@ -1,6 +1,6 @@
 package org.example;
 
-public class Title {
+public class Title implements Comparable<Title> {
   private String name;
   private int year;
   private boolean includedInPlan;
@@ -100,6 +100,11 @@ public class Title {
   @Override
   public String toString() {
     return "Title: " + this.getName() + " (" + this.getYear() + ")";
+  }
+
+  @Override
+  public int compareTo(Title anotherTitle) {
+    return this.getName().compareTo(anotherTitle.getName());
   }
 }
 
