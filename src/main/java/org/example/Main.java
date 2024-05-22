@@ -1,7 +1,6 @@
 package org.example;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -102,6 +101,19 @@ public class Main {
 
     System.out.println("Sorting an ArrayList<Non-Primitive>");
     Collections.sort(titles);
+    titles.forEach(System.out::println);
+    breakLine();
+
+
+    System.out.println("Sorting an ArrayList<Non-Primitive> using a Comparator");
+    // Using collections
+    Collections.sort(titles, new TitleYearComparator());
+    titles.forEach(System.out::println);
+
+    System.out.println("");
+
+    // Using List
+    titles.sort(new TitleYearComparator());
     titles.forEach(System.out::println);
     breakLine();
   }
