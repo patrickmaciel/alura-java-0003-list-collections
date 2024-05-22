@@ -2,6 +2,7 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -48,10 +49,20 @@ public class Main {
     System.out.println("Total duration: " + durationCalculator.getTotalDuration());
 
     ArrayList<Title> titles = new ArrayList<>();
+    movie.rate(5);
+    movie.rate(7);
     titles.add(movie);
+    lordOfTheRings.rate(8);
+    lordOfTheRings.rate(9);
     titles.add(lordOfTheRings);
+    myHeroAcademia.rate(10);
+    myHeroAcademia.rate(9);
     titles.add(myHeroAcademia);
+    movie1.rate(4);
+    movie1.rate(5);
     titles.add(movie1);
+    movie2.rate(8);
+    movie2.rate(9);
     titles.add(movie2);
 
     System.out.println("Titles quantity: " + titles.size());
@@ -114,6 +125,11 @@ public class Main {
 
     // Using List
     titles.sort(new TitleYearComparator());
+    titles.forEach(System.out::println);
+    breakLine();
+
+    System.out.println("Sorting an ArrayList<Non-Primitive> using List sort + inline Comparator");
+    titles.sort(Comparator.comparing(Title::getSumRates).reversed());
     titles.forEach(System.out::println);
     breakLine();
   }

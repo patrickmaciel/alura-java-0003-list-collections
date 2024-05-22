@@ -99,7 +99,7 @@ public class Title implements Comparable<Title> {
 
   @Override
   public String toString() {
-    return "Title: " + this.getName() + " (" + this.getYear() + ")";
+    return "Title: " + this.getName() + ", " + this.getSumRates() + " (" + this.getYear() + ")";
   }
 
   @Override
