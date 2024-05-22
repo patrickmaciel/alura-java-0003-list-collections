@@ -39,12 +39,19 @@ public class Main {
     durationCalculator.addDuration(movie);
     System.out.println("Recommendation: " + classificationFilter.getRecommendation());
 
+    Movie movie1 = new Movie("As Branquelas");
+    movie1.setYear(2004);
+
+    Movie movie2 = new Movie("The Walking Dead", 2009);
+
     System.out.println("Total duration: " + durationCalculator.getTotalDuration());
 
     ArrayList<Title> titles = new ArrayList<>();
     titles.add(movie);
     titles.add(lordOfTheRings);
     titles.add(myHeroAcademia);
+    titles.add(movie1);
+    titles.add(movie2);
 
     System.out.println("Titles quantity: " + titles.size());
     System.out.println("Titles ArrayList: " + titles);
@@ -59,6 +66,20 @@ public class Main {
 
     System.out.println("Persons quantity: " + persons.size());
     System.out.println("Persons ArrayList: " + persons);
+
+    breakLine();
+
+    System.out.println("Percorrendo um ArrayList com for");
+
+    for (Title title : titles) {
+      System.out.println(title.getName());
+    }
+
+    breakLine();
+
+    System.out.println("Percorrendo um ArrayList com foreach");
+
+    titles.forEach(title -> System.out.println(title.getName()));
   }
 
   public static void breakLine() {

@@ -9,6 +9,13 @@ public class Title {
   private int totalReviews;
   private int duration;
 
+  public Title() {
+  }
+
+  public Title(String name) {
+    this.name = name;
+  }
+
   void show() {
     System.out.println("Movie: " + name);
     System.out.println("Year: " + year);
